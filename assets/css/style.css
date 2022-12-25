@@ -5,3 +5,29 @@
     padding: 0;
     border: none;
 }
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-image: url('../images/background-image.jpg');
+    background-color: #00A8D3;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;   
+}
+
+.btn {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    background-color: #00A8D3;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#heading {
+    font-family: 'Alex Brush', sans-serif;
+    font-size: 120px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+
+}
