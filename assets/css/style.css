@@ -14,13 +14,34 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;   
+
 }
 
 .btn {
     font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    padding: 2px 5px;
+    margin: 20px;
+    width: 160px;
+
     color: #fff;
     background-color: #00A8D3;
     text-shadow: 2px 2px 4px #000000;
+
+    display: block;
+
+}
+
+.buttons {
+    position: relative;
+    bottom: -100px;
+    left: 24%;
+    
+}
+
+.btn:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em;
+    transform: translateY(-0.15em);
 }
 
 #heading {
@@ -30,4 +51,11 @@ body {
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
 
+}
+
+.game-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
