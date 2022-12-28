@@ -12,15 +12,35 @@
     <link rel="icon" type="image/x-icon" href="assets/images/plane.ico">
 </head>
 <body>
+
     <h1 id="heading">Travel Memory</h1>
 
     <div class="buttons">
-        <button class="btn">New Game</button>
-        <button class="btn">How To Play</button>
-        <button class="btn">Feedback</button>
+        <button class="btn" id="new-game">New Game</button>
+        <button class="btn" id="how-to-play">How To Play</button>
+        <button class="btn" id="feedback">Feedback</button>
     </div>
 
-    <div class="game-container"></div>
+    <div class="game-container">
+        <div id="game-grid hide"></div>
+        <div class="game-data hide">
+            <div class="time">Time : <span class="game-time">0:00</span></div>
+            <div class="turns">Turns : <span class="card-turns">0</span></div>
+        </div>
+    </div>
+
+    <div class="game-instructions">
+        <h2>How To Play!</h2>
+        <p>- Turn the cards and match the pairs of travel items!</p>
+        <ul>
+            <li>To begin the game, click on any card to turn it over.</li>
+            <li>The time starts when you click the first card.</li>
+            <li>When you have turned two cards it count as one move.</li>
+            <li>To complete the game you need to find and match all 8 pairs.</li>
+            <li>Try again to beat your time and turn score!</li>
+        </ul>
+        <p>Good Luck!</p>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
