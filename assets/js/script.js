@@ -10,11 +10,23 @@ const itemsArray = [
     {name: 'suitcase', image: 'suitcase.png'},
 ];
 
+/*Duplicate the itemsArray, 
+*code adapted from https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/
+*/
+const fullGameGrid = itemsArray.concat(itemsArray);
+
+/*Randomize fullGameGrid for each load
+*code adapted from https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/
+*/
+fullGameGrid.sort(function() {
+    return 0.5 - Math.random();
+})
 
 
 let gameInstructions = document.getElementById('instructions');
 let feedbackForm = document.getElementById('feedback');
 let showGameGrid = document.getElementById('game-modual');
+let gameGrid = document.getElementById('game-grid');
 
 
 function showGameInstructions() {
@@ -34,8 +46,17 @@ function hideFeedbackForm() {
 }
 
 function showGame() {
+    console.log(fullGameGrid);
     showGameGrid.classList.remove('hide');
-    
+    for (let i = 0; i < fullGameGrid.length; i++) {
+        gameGrid.innerHTML +=`
+        <div class="card" data-card-value="${fullGameGrid[i].name}">
+        <div class="card-back">
+        <img src="assets/images/${fullGameGrid[i].image}"></div>
+        </div>
+        `;
+        
+    }
 }
 
 // Eventlisteners
