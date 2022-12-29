@@ -70,9 +70,12 @@ h1 {
 
 .game-container {
     width: 80%; 
-    position: relative;
-    background-color: #00A4E8;;
     height: fit-content; 
+    position: relative;
+
+    background-color: #00A4E8;
+    border: 2px solid #14455a;
+
     display: grid; 
     margin: 30px auto; 
     padding: 50px 0px;
@@ -94,7 +97,7 @@ h1 {
     height: 150px;
     width: 130px;
     background-color: aquamarine;
-
+    border: 2px solid #14455a;
 }
 
 .card-back {

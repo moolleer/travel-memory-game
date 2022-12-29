@@ -1,3 +1,9 @@
+let gameInstructions = document.getElementById('instructions');
+let feedbackForm = document.getElementById('feedback');
+let showGameGrid = document.getElementById('game-modual');
+let gameGrid = document.getElementById('game-grid');
+
+
 //create an array of travel images
 const itemsArray = [
     {name: 'plane', image: 'plane.png'},
@@ -21,12 +27,6 @@ const fullGameGrid = itemsArray.concat(itemsArray);
 fullGameGrid.sort(function() {
     return 0.5 - Math.random();
 })
-
-
-let gameInstructions = document.getElementById('instructions');
-let feedbackForm = document.getElementById('feedback');
-let showGameGrid = document.getElementById('game-modual');
-let gameGrid = document.getElementById('game-grid');
 
 
 function showGameInstructions() {
