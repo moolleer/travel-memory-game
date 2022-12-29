@@ -22,8 +22,8 @@
     </div>
 
     <div class="game-container hide">
-        <div id="game-grid hide"></div>
-        <div class="game-data hide">
+        <div id="game-grid"></div>
+        <div class="game-data">
             <div class="time">Time : <span class="game-time">0:00</span></div>
             <div class="turns">Turns : <span class="card-turns">0</span></div>
         </div>
@@ -40,7 +40,8 @@
         <p>To complete the game you need to find and match all 8 pairs.</p>
         <p>Try again to beat your time and turnscore!</p>
         <p>Good Luck!</p>
-        <button id="close" ><i class="fa-solid fa-x"></i></button>
+        
+        <button class="close-btn" id="close" ><i class="fa-solid fa-x"></i></button>
     </div>
 
     <div class="feedback-container hide" id="feedback">
@@ -51,12 +52,13 @@
             <input class="input-field" type="text" id="name" name="user_name" required>
             <label for="email">Email Address:</label>
             <input class="input-field" type="email" id="email" name="email_address" required>
-            <input class="text-field" type="text" name="user_text" placeholder="Start writing here.." required >
+            <label for="user-text">Your Comments:</label>
+            <textarea name="user_text" id="user-text" cols="30" rows="10" placeholder="Start writing here.." required></textarea>
 
-            <input class="send-button" id="send-form" type="submit" value="Send!">
+            <input class="btn" id="send-form-btn" type="submit" value="Send!">
         </form>
 
-        <button id="close-form" ><i class="fa-solid fa-x"></i></button>
+        <button class="close-btn" id="close-form" ><i class="fa-solid fa-x"></i></button>
     </div>
 
     <!-- font awesome script-->

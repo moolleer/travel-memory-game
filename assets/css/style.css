@@ -10,7 +10,8 @@ body {
     font-family: 'Oswald', sans-serif;
     background-image: url('../images/background-image.jpg');
     background-color: #00A8D3;
-    background-size: cover; 
+    background-size: cover;
+    color: #fff; 
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;   
@@ -28,14 +29,27 @@ body {
     color: #fff;
     background-color: #00A8D3;
     text-shadow: 2px 2px 4px #000000;
+    border: 2px solid #fff;
 
     display: block;
 
 }
 
+/* Center send button */
+#send-form-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close-btn {
+    width: 25px;
+    height: 25px;
+}
+
 .buttons {
     position: relative;
-    bottom: -100px;
+    bottom: -200px;
     left: 24%;
     
 }
@@ -51,14 +65,12 @@ h1 {
     color: #fff;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
-
+    
 }
-
-
 
 .game-container {
     width: 80%; 
-    background-color: bisque;
+    background-color: #00A4E8;;
     height: fit-content; 
     display: flex; 
     flex-wrap: wrap; 
@@ -80,17 +92,47 @@ h1 {
 
 .game-instructions {
     width: 50%;
-    height: 200px;
-    background-color: #00A4E8;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000000;
-    letter-spacing: 1px;
-    top: -120px;
+    height: 300px;
+    top: -160px;
     left: 25%;
     position: relative;
     padding: 50px 0;
     z-index: 1;
     text-align: center;
-    
+
+    border: 3px solid #1f6d8f;
+    background-color: #00A8D3;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000000;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.feedback-container {
+    width: 50%;
+    height: 500px;
+    top: -160px;
+    left: 25%;
+    position: relative;
+    padding: 10px 0;
+    z-index: 1;
+    text-align: center;
+
+    border: 3px solid #14455a;
+    background-color: #00A8D3;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000000;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+label {
+    display: block;
+}
+
+input, textarea {
+    padding: 8px;
+    box-shadow: 4px 4px 5px #1f6d8f;
+    border-radius: 10px;
 }
 
