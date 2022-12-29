@@ -93,14 +93,13 @@ h1 {
 .game-instructions {
     width: 50%;
     height: 400px;
-    top: 60px;
     left: 25%;
     position: relative;
     padding: 50px 0;
     z-index: 1;
     text-align: center;
 
-    border: 3px solid #1f6d8f;
+    border: 3px solid #14455a;
     background-color: #00A8D3;
     color: #fff;
     text-shadow: 2px 1px 3px #000000;
@@ -115,7 +114,6 @@ p {
 .feedback-container {
     width: 50%;
     height: 500px;
-    top: 60px;
     left: 25%;
     position: relative;
     padding: 10px 0;
