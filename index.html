@@ -18,10 +18,10 @@
     <div class="buttons">
         <button class="btn" id="new-game">New Game</button>
         <button class="btn" id="how-to-play">How To Play</button>
-        <button class="btn" id="feedback">Feedback</button>
+        <button class="btn" id="feedback-button">Feedback</button>
     </div>
 
-    <div class="game-container">
+    <div class="game-container hide">
         <div id="game-grid hide"></div>
         <div class="game-data hide">
             <div class="time">Time : <span class="game-time">0:00</span></div>
@@ -31,17 +31,36 @@
 
     <div class="game-instructions hide" id="instructions">
         <h2>How To Play!</h2>
+        <hr>
         <h3>- Turn the cards and match the pairs of travel items!</h3>
-        <ul>
-            <li>To begin the game, click on any card to turn it over.</li>
-            <li>The time starts when you click the first card.</li>
-            <li>When you have turned two cards it count as one move.</li>
-            <li>To complete the game you need to find and match all 8 pairs.</li>
-            <li>Try again to beat your time and turn score!</li>
-        </ul>
+        <hr>
+        <p>To begin the game, click on any card to turn it over.</p>
+        <p>The time starts when you click the first card.</p>
+        <p>When you have turned two cards it count as one move.</p>
+        <p>To complete the game you need to find and match all 8 pairs.</p>
+        <p>Try again to beat your time and turnscore!</p>
         <p>Good Luck!</p>
-        <button id="close">Close</button>
+        <button id="close" ><i class="fa-solid fa-x"></i></button>
     </div>
+
+    <div class="feedback-container hide" id="feedback">
+        <form class="feedback-form" action="https://formdump.codeinstitute.net/" method="POST">
+            <h2>Let us now what you think!</h2>
+
+            <label for="name">Your Name:</label>
+            <input class="input-field" type="text" id="name" name="user_name" required>
+            <label for="email">Email Address:</label>
+            <input class="input-field" type="email" id="email" name="email_address" required>
+            <input class="text-field" type="text" name="user_text" placeholder="Start writing here.." required >
+
+            <input class="send-button" id="send-form" type="submit" value="Send!">
+        </form>
+
+        <button id="close-form" ><i class="fa-solid fa-x"></i></button>
+    </div>
+
+    <!-- font awesome script-->
+    <script src="https://kit.fontawesome.com/942f7e0d1a.js" crossorigin="anonymous"></script>
 
     <script src="assets/js/script.js"></script>
 </body>

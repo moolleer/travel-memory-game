@@ -45,7 +45,7 @@ body {
     transform: translateY(-0.15em);
 }
 
-#heading {
+h1 {
     font-family: 'Alex Brush', sans-serif;
     font-size: 120px;
     color: #fff;
@@ -53,6 +53,8 @@ body {
     text-shadow: 2px 2px 4px #000000;
 
 }
+
+
 
 .game-container {
     width: 80%; 
@@ -76,5 +78,19 @@ body {
     display: none;
 }
 
-
+.game-instructions {
+    width: 50%;
+    height: 200px;
+    background-color: #00A4E8;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 1px;
+    top: -120px;
+    left: 25%;
+    position: relative;
+    padding: 50px 0;
+    z-index: 1;
+    text-align: center;
+    
+}
 
