@@ -48,9 +48,9 @@ body {
 }
 
 .buttons {
-    position: relative;
-    bottom: -200px;
-    left: 24%;
+    position: absolute;
+    top: 35%;
+    left: 25%;
     
 }
 
@@ -65,7 +65,7 @@ h1 {
     color: #fff;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
-    
+
 }
 
 .game-container {
@@ -92,8 +92,8 @@ h1 {
 
 .game-instructions {
     width: 50%;
-    height: 300px;
-    top: -160px;
+    height: 400px;
+    top: 60px;
     left: 25%;
     position: relative;
     padding: 50px 0;
@@ -103,15 +103,19 @@ h1 {
     border: 3px solid #1f6d8f;
     background-color: #00A8D3;
     color: #fff;
-    text-shadow: 2px 2px 2px #000000;
+    text-shadow: 2px 1px 3px #000000;
     font-size: 20px;
     letter-spacing: 1px;
+}
+
+p {
+    padding: 10px 0px;
 }
 
 .feedback-container {
     width: 50%;
     height: 500px;
-    top: -160px;
+    top: 60px;
     left: 25%;
     position: relative;
     padding: 10px 0;
