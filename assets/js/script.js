@@ -52,7 +52,7 @@ function showGame() {
     for (let i = 0; i < fullGameGrid.length; i++) {
         gameGrid.innerHTML +=`
         <div class="card" data-card-value="${fullGameGrid[i].name}">
-        <div class="card-front">?</div>
+        <div class="card-front"><i class="fa-solid fa-plane-up"></i></div>
         <div class="card-back">
         <img src="assets/images/${fullGameGrid[i].image}"></div>
         </div>
@@ -67,7 +67,7 @@ function showGame() {
 }
 
 function turnCard() {
-    this.classList.toggle('flip');
+    this.classList.toggle('turn');
 }
 
 let howToPlay = document.getElementById('how-to-play');
