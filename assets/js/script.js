@@ -1,3 +1,5 @@
+
+
 let gameInstructions = document.getElementById('instructions');
 let feedbackForm = document.getElementById('feedback');
 let showGameGrid = document.getElementById('game-modual');
@@ -44,7 +46,7 @@ function showFeedbackForm() {
 function hideFeedbackForm() {
     feedbackForm.classList.add('hide');
 }
-
+//Setup the gamegrid by creating each card and add eventlisteners
 function showGame() {
     showGameGrid.classList.remove('hide');
     for (let i = 0; i < fullGameGrid.length; i++) {
@@ -54,12 +56,20 @@ function showGame() {
         <div class="card-back">
         <img src="assets/images/${fullGameGrid[i].image}"></div>
         </div>
-        `;
-        
+        `;   
     }
+    
+    //Add eventlistener to each card after cards been added to the grid
+    const memoryCards = document.querySelectorAll('.card');
+        memoryCards.forEach(card => {
+        card.addEventListener('click', turnCard);
+    });
 }
 
-// Eventlisteners
+function turnCard() {
+    console.log("Clicked me!");
+    console.log(this);
+}
 
 let howToPlay = document.getElementById('how-to-play');
 howToPlay.addEventListener('click', showGameInstructions);

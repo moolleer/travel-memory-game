@@ -97,9 +97,16 @@ h1 {
     display: flex;
     position: relative;
     flex-wrap: wrap;
+
     width: 135px;
     height: 160px;
     cursor: pointer;
+    
+}
+
+.card:active {
+    transform: scale(.90);
+    transition: transform.3s;
 }
 
 .card img {
