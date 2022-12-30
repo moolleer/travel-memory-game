@@ -67,8 +67,7 @@ function showGame() {
 }
 
 function turnCard() {
-    console.log("Clicked me!");
-    console.log(this);
+    this.classList.toggle('flip');
 }
 
 let howToPlay = document.getElementById('how-to-play');
