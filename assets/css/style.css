@@ -12,10 +12,10 @@ body {
     background-color: #00A8D3;
     background-size: cover;
     color: #fff; 
+
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;   
-
 }
 
 
@@ -75,28 +75,22 @@ h1 {
 
     background-color: #00A4E8;
     border: 2px solid #14455a;
-
-    /* display: grid;  */
     margin: 30px auto; 
     padding: 50px 0px;
-    /* justify-content: space-evenly; */
-    
 }
 
 #game-grid {
     display: grid; 
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    /* align-items: center; */
-    grid-gap: 15px;
-    /* justify-content: center; */
-    
+    grid-gap: 15px;    
 }
-/*tom innan*/
+
 .card {
     display: flex;
     position: relative;
     flex-wrap: wrap;
+    margin: auto;
 
     width: 135px;
     height: 160px;
@@ -105,7 +99,6 @@ h1 {
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform.4s;
-    
 }
 
 .card:active {
@@ -135,7 +128,6 @@ h1 {
     font-size: 50px;
     text-align: center;
     backface-visibility: hidden;
-
 }
 
 .card-front i {
@@ -146,7 +138,6 @@ h1 {
 .card.turn {
     transform: rotateY(180deg);
 }
-
 
 .hide {
     display: none;

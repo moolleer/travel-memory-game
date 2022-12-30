@@ -18,19 +18,16 @@ const itemsArray = [
     {name: 'suitcase', image: 'suitcase.png'},
 ];
 
-/*Duplicate the itemsArray, 
+/*Duplicate the array and randomize fullGameGrid for each load
 *code adapted from https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/
 */
 const fullGameGrid = itemsArray.concat(itemsArray);
 
-/*Randomize fullGameGrid for each load
-*code adapted from https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/
-*/
 fullGameGrid.sort(function() {
     return 0.5 - Math.random();
 })
 
-
+//Functions for showing and hiding feedbackform and instructions
 function showGameInstructions() {
     gameInstructions.classList.remove('hide');
 }
@@ -51,7 +48,7 @@ function showGame() {
     showGameGrid.classList.remove('hide');
     for (let i = 0; i < fullGameGrid.length; i++) {
         gameGrid.innerHTML +=`
-        <div class="card" data-card-value="${fullGameGrid[i].name}">
+        <div class="card" data-description="${fullGameGrid[i].name}">
         <div class="card-front"><i class="fa-solid fa-plane-up"></i></div>
         <div class="card-back">
         <img src="assets/images/${fullGameGrid[i].image}"></div>
@@ -66,8 +63,37 @@ function showGame() {
     });
 }
 
+/*click function for memorycards, and for turn class css effects
+* code adapted from https://marina-ferreira.github.io/tutorials/js/memory-game/
+*/
+let turnedCard = false;
+let firstCard, secondCard;
+
 function turnCard() {
-    this.classList.toggle('turn');
+    this.classList.add('turn');
+
+    if (!turnedCard){
+        turnedCard = true; //first klick on a card
+        firstCard = this;
+        console.log(turnedCard, firstCard);
+    } else {
+        turnedCard = false; //second click on a card
+        secondCard = this;
+        console.log(firstCard, secondCard);
+
+        //check if cards match
+        if (firstCard.dataset.description === secondCard.dataset.description) {
+            firstCard.removeEventListener('click', turnCard);
+            secondCard.removeEventListener('click', turnCard);
+        } else {
+            setTimeout(() => { //prevents the first card to turn before second is clicked
+            firstCard.classList.remove('turn');
+            secondCard.classList.remove('turn');
+        }, 800);
+        }
+
+        
+    }
 }
 
 let howToPlay = document.getElementById('how-to-play');
