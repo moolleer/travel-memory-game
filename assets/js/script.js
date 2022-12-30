@@ -46,11 +46,11 @@ function hideFeedbackForm() {
 }
 
 function showGame() {
-    console.log(fullGameGrid);
     showGameGrid.classList.remove('hide');
     for (let i = 0; i < fullGameGrid.length; i++) {
         gameGrid.innerHTML +=`
         <div class="card" data-card-value="${fullGameGrid[i].name}">
+        <div class="card-front">?</div>
         <div class="card-back">
         <img src="assets/images/${fullGameGrid[i].image}"></div>
         </div>
