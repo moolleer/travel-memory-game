@@ -68,31 +68,50 @@ function showGame() {
 */
 let turnedCard = false;
 let firstCard, secondCard;
+let lockGrid = false;
 
 function turnCard() {
+    if (lockGrid) return; //if true the rest wont be executed
+    if (this === firstCard) return; //if same card clicked two times after each other
     this.classList.add('turn');
 
     if (!turnedCard){
         turnedCard = true; //first klick on a card
         firstCard = this;
-        console.log(turnedCard, firstCard);
+        
     } else {
         turnedCard = false; //second click on a card
         secondCard = this;
-        console.log(firstCard, secondCard);
-
-        //check if cards match
-        if (firstCard.dataset.description === secondCard.dataset.description) {
-            firstCard.removeEventListener('click', turnCard);
-            secondCard.removeEventListener('click', turnCard);
-        } else {
-            setTimeout(() => { //prevents the first card to turn before second is clicked
-            firstCard.classList.remove('turn');
-            secondCard.classList.remove('turn');
-        }, 800);
-        }
-
         
+        checkMatch();
+    }
+}
+//resteing card values so card can be clicked again
+function resetGrid() {
+    turnedCard = false;
+    lockGrid = false;
+
+    firstCard = null;
+    secondCard = null;
+}
+
+//check if cards match
+function checkMatch() {
+    //for a match, prevent the cards to be clicked and turned again
+    if (firstCard.dataset.description === secondCard.dataset.description) {
+        firstCard.removeEventListener('click', turnCard);
+        secondCard.removeEventListener('click', turnCard);
+
+        resetGrid();
+    } else {
+        lockGrid = true; //lock the grid until cards have been turned
+
+        setTimeout(() => { //prevents the first card to turn before second is clicked
+        firstCard.classList.remove('turn');
+        secondCard.classList.remove('turn');
+
+        resetGrid();// 
+    }, 800);
     }
 }
 
