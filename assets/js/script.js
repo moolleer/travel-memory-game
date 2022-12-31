@@ -70,7 +70,13 @@ let turnedCard = false;
 let firstCard, secondCard;
 let lockGrid = false;
 
+let cardsMatched = 0;
+let turnScore = 0;
+let startGameTime = true;
+
 function turnCard() {
+    if (startGameTime) startTime();
+
     if (lockGrid) return; //if true the rest wont be executed
     if (this === firstCard) return; //if same card clicked two times after each other
     this.classList.add('turn');
@@ -86,6 +92,25 @@ function turnCard() {
         checkMatch();
     }
 }
+
+const gameTimeContainer = document.getElementById('game-time');
+let time;
+let minutes = 0;
+let seconds = 0;
+
+//starts the timer for the game
+function startTime () {
+    time = setInterval(function() {
+        seconds++;
+        if (seconds === 59) {
+            minutes++;
+            console.log(minutes);
+            seconds = 0;
+        }
+        gameTimeContainer.innerHTML = minutes +" : " + seconds;
+    }, 1000);
+    startGameTime = false;
+}
 //reseting card values so card can be clicked again
 function resetGrid() {
     turnedCard = false;
@@ -95,7 +120,7 @@ function resetGrid() {
     secondCard = null;
 }
 
-let cardsMatched = 0;
+
 
 //check if cards match
 function checkMatch() {
@@ -105,6 +130,7 @@ function checkMatch() {
         secondCard.removeEventListener('click', turnCard);
 
         ++cardsMatched;
+        ++turnScore;
         checkCardMatches();
         resetGrid();
     } else {
@@ -114,6 +140,8 @@ function checkMatch() {
         firstCard.classList.remove('turn');
         secondCard.classList.remove('turn');
 
+        ++turnScore;
+        console.log(turnScore);
         resetGrid();// 
     }, 800);
     }
