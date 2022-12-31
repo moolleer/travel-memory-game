@@ -79,6 +79,27 @@ h1 {
     padding: 50px 0px;
 }
 
+.game-data {
+    font-family: 'Alex Brush', sans-serif;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #000000;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.time, .turns {
+    
+}
+
+.time {
+    
+}
+
+.turns {
+    
+}
+
 #game-grid {
     display: grid; 
     grid-template-columns: repeat(4, 1fr);

@@ -86,7 +86,7 @@ function turnCard() {
         checkMatch();
     }
 }
-//resteing card values so card can be clicked again
+//reseting card values so card can be clicked again
 function resetGrid() {
     turnedCard = false;
     lockGrid = false;
@@ -95,6 +95,8 @@ function resetGrid() {
     secondCard = null;
 }
 
+let cardsMatched = 0;
+
 //check if cards match
 function checkMatch() {
     //for a match, prevent the cards to be clicked and turned again
@@ -102,6 +104,8 @@ function checkMatch() {
         firstCard.removeEventListener('click', turnCard);
         secondCard.removeEventListener('click', turnCard);
 
+        ++cardsMatched;
+        checkCardMatches();
         resetGrid();
     } else {
         lockGrid = true; //lock the grid until cards have been turned
@@ -113,6 +117,11 @@ function checkMatch() {
         resetGrid();// 
     }, 800);
     }
+}
+
+//checks if all cards are matched
+function checkCardMatches() {
+    if (cardsMatched === 8) console.log("Grattis du klarade det!");
 }
 
 let howToPlay = document.getElementById('how-to-play');
