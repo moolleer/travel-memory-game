@@ -1,4 +1,4 @@
-
+const blurContainer = document.getElementById('blur-container');
 
 let gameInstructions = document.getElementById('instructions');
 let feedbackForm = document.getElementById('feedback');
@@ -30,18 +30,22 @@ fullGameGrid.sort(function() {
 //Functions for showing and hiding feedbackform and instructions
 function showGameInstructions() {
     gameInstructions.classList.remove('hide');
+    blurContainer.classList.add('blur');
 }
 
 function hideGameInstructions(){
     gameInstructions.classList.add('hide');
+    blurContainer.classList.remove('blur');
 }
 
 function showFeedbackForm() {
     feedbackForm.classList.remove('hide');
+    blurContainer.classList.add('blur');
 }
 
 function hideFeedbackForm() {
     feedbackForm.classList.add('hide');
+    blurContainer.classList.remove('blur');
 }
 
 //Setup the gamegrid by creating each card and add eventlisteners
@@ -62,6 +66,8 @@ function showGame() {
         memoryCards.forEach(card => {
         card.addEventListener('click', turnCard);
     });
+
+    blurContainer.classList.add('blur');
 }
 
 /*click function for memorycards, and for turn class css effects
@@ -171,7 +177,7 @@ function finishedGame() {
     <p>Your time was: ${minutes} : ${seconds} and your number of turns was: ${turnScore}.</p>
     <p>Try again to beat your time and number of turns!</p>
     <button class="btn" id="reset-game-btn"type="btn" type="button">Try Again</button>
-    <button class="btn" id="close-finished-game-btn" type="button">Close</button>
+    <button class="close-btn" id="close" type="button" ><i class="fa-solid fa-x"></i></button>
     </div>
     `; 
 }

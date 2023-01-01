@@ -18,6 +18,15 @@ body {
     background-position: center center;   
 }
 
+/*Blurs the background*/
+.blur{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+}
 
 .btn {
     font-family: 'Oswald', sans-serif;
@@ -45,6 +54,7 @@ body {
 #reset-game-btn, #close-finished-game-btn {
     bottom: -20px;
     position: relative;
+    margin-bottom: 40px;
 }
 
 .close-btn {
@@ -70,6 +80,9 @@ h1 {
     color: #fff;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
+
+    position: relative;
+    z-index: 1;
 
 }
 
@@ -173,15 +186,14 @@ h1 {
 .game-instructions {
     width: 50%;
     height: 400px;
-    left: 25%;
     position: relative;
     padding: 50px 0;
-    z-index: 1;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 
     border: 3px solid #14455a;
     background-color: #00A8D3;
-    color: #fff;
     text-shadow: 2px 1px 3px #000000;
     font-size: 20px;
     letter-spacing: 1px;
@@ -194,15 +206,14 @@ p {
 .feedback-container {
     width: 50%;
     height: 500px;
-    left: 25%;
     position: relative;
     padding: 10px 0;
-    z-index: 1;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 
     border: 3px solid #14455a;
     background-color: #00A8D3;
-    color: #fff;
     text-shadow: 2px 2px 2px #000000;
     font-size: 20px;
     letter-spacing: 1px;
