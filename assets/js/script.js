@@ -43,6 +43,7 @@ function showFeedbackForm() {
 function hideFeedbackForm() {
     feedbackForm.classList.add('hide');
 }
+
 //Setup the gamegrid by creating each card and add eventlisteners
 function showGame() {
     showGameGrid.classList.remove('hide');
@@ -104,12 +105,15 @@ function startTime () {
         seconds++;
         if (seconds === 59) {
             minutes++;
-            console.log(minutes);
             seconds = 0;
         }
         gameTimeContainer.innerHTML = minutes +" : " + seconds;
     }, 1000);
     startGameTime = false;
+}
+
+function stopTime() {
+    clearInterval(time);
 }
 //reseting card values so card can be clicked again
 function resetGrid() {
@@ -120,7 +124,7 @@ function resetGrid() {
     secondCard = null;
 }
 
-
+const cardTurnsContainer = document.getElementById('card-turns')
 
 //check if cards match
 function checkMatch() {
@@ -131,6 +135,7 @@ function checkMatch() {
 
         ++cardsMatched;
         ++turnScore;
+        console.log(turnScore);
         checkCardMatches();
         resetGrid();
     } else {
@@ -142,14 +147,33 @@ function checkMatch() {
 
         ++turnScore;
         console.log(turnScore);
-        resetGrid();// 
-    }, 800);
+        resetGrid();
+        }, 800);
     }
+
+    cardTurnsContainer.innerHTML = `${turnScore}`;
 }
 
-//checks if all cards are matched
+//checks if all cards are matched and if so stops the game and show message
 function checkCardMatches() {
-    if (cardsMatched === 8) console.log("Grattis du klarade det!");
+    if (cardsMatched === 8) {
+        stopTime();
+        finishedGame();
+
+    } 
+    
+}
+
+function finishedGame() {
+    gameGrid.innerHTML +=`
+    <div class="game-end-msg">
+    <h2>You matched all pairs!!</h2>
+    <p>Your time was: ${minutes} : ${seconds} and your number of turns was: ${turnScore}.</p>
+    <p>Try again to beat your time and number of turns!</p>
+    <button class="btn" id="reset-game-btn"type="btn" type="button">Try Again</button>
+    <button class="btn" id="close-finished-game-btn" type="button">Close</button>
+    </div>
+    `; 
 }
 
 let howToPlay = document.getElementById('how-to-play');
