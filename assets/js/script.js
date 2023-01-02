@@ -170,8 +170,12 @@ function checkCardMatches() {
     
 }
 
+//Show a finished game message and remove focus from the background
 function finishedGame() {
-    gameGrid.innerHTML +=`
+    showGameGrid.classList.add('hide');
+    blurContainer.classList.add('set-background');
+
+    blurContainer.innerHTML +=`
     <div class="game-end-msg">
     <h2>You matched all pairs!!</h2>
     <p>Your time was: ${minutes} : ${seconds} and your number of turns was: ${turnScore}.</p>
