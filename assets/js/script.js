@@ -1,9 +1,25 @@
 const blurContainer = document.getElementById('blur-container');
+const gameTimeContainer = document.getElementById('game-time');
+const cardTurnsContainer = document.getElementById('card-turns');
+const container = document.querySelector('#game-grid');
 
 let gameInstructions = document.getElementById('instructions');
 let feedbackForm = document.getElementById('feedback');
 let showGameGrid = document.getElementById('game-modual');
 let gameGrid = document.getElementById('game-grid');
+
+let turnedCard = false;
+let firstCard, secondCard;
+let lockGrid = false;
+
+let cardsMatched = 0;
+let turnScore = 0;
+let startGameTime = true;
+
+
+let time;
+let minutes = 0;
+let seconds = 0;
 
 
 //create an array of travel images
@@ -23,9 +39,12 @@ const itemsArray = [
 */
 const fullGameGrid = itemsArray.concat(itemsArray);
 
+function shuffleCards() {
 fullGameGrid.sort(function() {
     return 0.5 - Math.random();
 })
+
+}
 
 //Functions for showing and hiding feedbackform and instructions
 function showGameInstructions() {
@@ -50,7 +69,10 @@ function hideFeedbackForm() {
 
 //Setup the gamegrid by creating each card and add eventlisteners
 function showGame() {
+    console.log("Nu är jag här");
     showGameGrid.classList.remove('hide');
+    shuffleCards();
+    
     for (let i = 0; i < fullGameGrid.length; i++) {
         gameGrid.innerHTML +=`
         <div class="card" data-description="${fullGameGrid[i].name}">
@@ -73,14 +95,6 @@ function showGame() {
 /*click function for memorycards, and for turn class css effects
 * code adapted from https://marina-ferreira.github.io/tutorials/js/memory-game/
 */
-let turnedCard = false;
-let firstCard, secondCard;
-let lockGrid = false;
-
-let cardsMatched = 0;
-let turnScore = 0;
-let startGameTime = true;
-
 function turnCard() {
     if (startGameTime) startTime();
 
@@ -99,11 +113,6 @@ function turnCard() {
         checkMatch();
     }
 }
-
-const gameTimeContainer = document.getElementById('game-time');
-let time;
-let minutes = 0;
-let seconds = 0;
 
 //starts the timer for the game
 function startTime () {
@@ -130,8 +139,6 @@ function resetGrid() {
     secondCard = null;
 }
 
-const cardTurnsContainer = document.getElementById('card-turns')
-
 //check if cards match
 function checkMatch() {
     //for a match, prevent the cards to be clicked and turned again
@@ -148,8 +155,10 @@ function checkMatch() {
         lockGrid = true; //lock the grid until cards have been turned
 
         setTimeout(() => { //prevents the first card to turn before second is clicked
-        firstCard.classList.remove('turn');
-        secondCard.classList.remove('turn');
+            if(firstCard !== null) firstCard.classList.remove('turn');
+            if(secondCard !== null) secondCard.classList.remove('turn');
+        // firstCard.classList.remove('turn');
+        // secondCard.classList.remove('turn');
 
         ++turnScore;
         console.log(turnScore);
@@ -165,9 +174,7 @@ function checkCardMatches() {
     if (cardsMatched === 8) {
         stopTime();
         finishedGame();
-
-    } 
-    
+    }  
 }
 
 //Show a finished game message and remove focus from the background
@@ -178,14 +185,49 @@ function finishedGame() {
     blurContainer.innerHTML +=`
     <div class="game-end-msg">
     <h2>You matched all pairs!!</h2>
-    <p>Your time was: ${minutes} : ${seconds} and your number of turns was: ${turnScore}.</p>
+    <p>Your time was: ${minutes}: ${seconds} and your number of turns was: ${turnScore}.</p>
     <p>Try again to beat your time and number of turns!</p>
     <button class="btn" id="reset-game-btn"type="btn" type="button">Try Again</button>
+    <p>Close and return</p>
     <button class="close-btn" id="close" type="button" ><i class="fa-solid fa-x"></i></button>
     </div>
     `; 
 }
 
+function returnHome() {
+    
+}
+
+function restartGame() {
+    
+    stopTime();
+
+    minutes = 0;
+    seconds = 0;
+    gameTimeContainer.innerHTML = minutes +" : " + seconds;
+
+    cardsMatched = 0;
+    turnScore = 0;
+    cardTurnsContainer.innerHTML = turnScore;
+    startGameTime = true;
+
+    if(firstCard !== null) firstCard.classList.remove('turn');//gör något åt att de inte går att restarta om man inte klickat på ett kort
+    if(secondCard !== null) secondCard.classList.remove('turn');//gör något åt att de inte går att restarta om man inte klickat på ett kort
+
+    removeAllChildNodes(container);
+    resetGrid(); 
+    showGame(); 
+}
+
+//Remove all cards
+function removeAllChildNodes(parent) {
+    console.log("Nu är jag i remove all!");
+    while (gameGrid.firstChild) {
+        gameGrid.removeChild(gameGrid.firstChild);
+    }
+}
+
+//Eventlisteners
 let howToPlay = document.getElementById('how-to-play');
 howToPlay.addEventListener('click', showGameInstructions);
 
@@ -200,3 +242,9 @@ closeForm.addEventListener('click', hideFeedbackForm);
 
 let startGameButton = document.getElementById('new-game');
 startGameButton.addEventListener('click', showGame);
+
+let returnHomeButton = document.getElementById('home-button');
+returnHomeButton.addEventListener('click', returnHome);
+
+let restartButton = document.getElementById('restart-button');
+restartButton.addEventListener('click', restartGame);
