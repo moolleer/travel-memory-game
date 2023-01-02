@@ -2,25 +2,10 @@ const blurContainer = document.getElementById('blur-container');
 const gameTimeContainer = document.getElementById('game-time');
 const cardTurnsContainer = document.getElementById('card-turns');
 const container = document.querySelector('#game-grid');
-
-let gameInstructions = document.getElementById('instructions');
-let feedbackForm = document.getElementById('feedback');
-let showGameGrid = document.getElementById('game-modual');
-let gameGrid = document.getElementById('game-grid');
-
-let turnedCard = false;
-let firstCard, secondCard;
-let lockGrid = false;
-
-let cardsMatched = 0;
-let turnScore = 0;
-let startGameTime = true;
-
-
-let time;
-let minutes = 0;
-let seconds = 0;
-
+const gameInstructions = document.getElementById('instructions');
+const feedbackForm = document.getElementById('feedback');
+const showGameGrid = document.getElementById('game-modual');
+const gameGrid = document.getElementById('game-grid');
 
 //create an array of travel images
 const itemsArray = [
@@ -34,6 +19,18 @@ const itemsArray = [
     {name: 'suitcase', image: 'suitcase.png'},
 ];
 
+let turnedCard = false;
+let firstCard, secondCard;
+let lockGrid = false;
+
+let cardsMatched = 0;
+let turnScore = 0;
+let startGameTime = true;
+
+let time;
+let minutes = 0;
+let seconds = 0;
+
 /*Duplicate the array and randomize fullGameGrid for each load
 *code adapted from https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/
 */
@@ -43,7 +40,6 @@ function shuffleCards() {
 fullGameGrid.sort(function() {
     return 0.5 - Math.random();
 })
-
 }
 
 //Functions for showing and hiding feedbackform and instructions
@@ -71,7 +67,9 @@ function hideFeedbackForm() {
 function showGame() {
     console.log("Nu är jag här");
     showGameGrid.classList.remove('hide');
+    if(blurContainer.classList.contains('hide')) blurContainer.classList.remove('hide');
     shuffleCards();
+    console.log(fullGameGrid);
     
     for (let i = 0; i < fullGameGrid.length; i++) {
         gameGrid.innerHTML +=`
@@ -126,7 +124,7 @@ function startTime () {
     }, 1000);
     startGameTime = false;
 }
-
+//Stops the timer
 function stopTime() {
     clearInterval(time);
 }
@@ -168,37 +166,87 @@ function checkMatch() {
 
     cardTurnsContainer.innerHTML = `${turnScore}`;
 }
-
+// const gameEndMessage = document.querySelector('#game-end-message');
+let messageControl;
 //checks if all cards are matched and if so stops the game and show message
 function checkCardMatches() {
     if (cardsMatched === 8) {
         stopTime();
-        finishedGame();
+        if(messageControl) {
+            blurContainer.classList.remove('hide');
+            showGameGrid.classList.add('hide');
+            blurContainer.classList.add('set-background');
+            console.log("Inne i den fucking if satsen");
+        } else {
+            finishedGame(); 
+            console.log("Inne i den fucking else satsen");
+        }
+         
     }  
 }
 
 //Show a finished game message and remove focus from the background
 function finishedGame() {
-    showGameGrid.classList.add('hide');
-    blurContainer.classList.add('set-background');
+    messageControl = true;
+    if(blurContainer.classList.contains('hide')) {
+        blurContainer.classList.remove('hide');
+        showGameGrid.classList.add('hide');
+    } else {
+        showGameGrid.classList.add('hide');
+        blurContainer.classList.add('set-background');
 
-    blurContainer.innerHTML +=`
-    <div class="game-end-msg">
-    <h2>You matched all pairs!!</h2>
-    <p>Your time was: ${minutes}: ${seconds} and your number of turns was: ${turnScore}.</p>
-    <p>Try again to beat your time and number of turns!</p>
-    <button class="btn" id="reset-game-btn"type="btn" type="button">Try Again</button>
-    <p>Close and return</p>
-    <button class="close-btn" id="close" type="button" ><i class="fa-solid fa-x"></i></button>
-    </div>
-    `; 
+        blurContainer.innerHTML +=`
+        <div class="game-end-msg">
+        <h2>You matched all pairs!!</h2>
+        <p>Your time was: ${minutes}: ${seconds} and your number of turns was: ${turnScore}.</p>
+        <p>Try again to beat your time and number of turns!</p>
+        <button class="btn" id="reset-game-btn"type="btn" type="button">Try Again</button>
+        <p>Close and return</p>
+        <button class="close-btn" id="close" type="button" ><i class="fa-solid fa-x"></i></button>
+        </div>
+        `; 
+
+        let resetGameBtn = document.getElementById('reset-game-btn');
+        resetGameBtn.addEventListener('click', tryAgain);
+        let closeBtn = document.getElementById('close');
+        closeBtn.addEventListener('click', closeGame);
+    }
+}
+
+//Functions for clearing and reseting the game
+function tryAgain() {
+    blurContainer.classList.add('hide');
+    removeBlurContBackground();
+    clearGame();
+    showGame();
+}
+
+function closeGame() {
+    blurContainer.classList.add('hide');
+    removeBlurContBackground();
+    clearGame();
 }
 
 function returnHome() {
-    
+    showGameGrid.classList.add('hide');
+    blurContainer.classList.add('hide');
+    removeBlurContBackground();
+    clearGame();
 }
 
+function removeBlurContBackground() {
+    if(blurContainer.classList.contains('set-background')) blurContainer.classList.remove('set-background');
+}
+
+//Restarts the game, turn back all cards and removing all cards before opening up a new game
 function restartGame() {
+    clearGame();
+    if(secondCard !== null) secondCard.classList.remove('turn'); 
+    if(secondCard !== null) secondCard.classList.remove('turn'); 
+    showGame(); 
+}
+
+function clearGame() {
     stopTime();
 
     minutes = 0;
@@ -210,12 +258,8 @@ function restartGame() {
     cardTurnsContainer.innerHTML = turnScore;
     startGameTime = true;
 
-    if(firstCard !== null) firstCard.classList.remove('turn');//gör något åt att de inte går att restarta om man inte klickat på ett kort
-    if(secondCard !== null) secondCard.classList.remove('turn');//gör något åt att de inte går att restarta om man inte klickat på ett kort
-
     removeAllChildNodes(container);
     resetGrid(); 
-    showGame(); 
 }
 
 //Remove all cards
