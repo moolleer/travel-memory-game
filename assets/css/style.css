@@ -258,3 +258,32 @@ input, textarea {
     border-radius: 10px;
 }
 
+/* for screen sizes 1200 px wide and down*/
+
+@media screen and (max-width: 1200px){
+
+}
+
+/* for screen sizes 992 px wide and down*/
+
+@media screen and (max-width: 992px) {
+
+}
+
+/* for screen sizes 768 px wide and down*/
+
+@media screen and (max-width: 768px) {
+
+}
+
+/* for screen sizes 600 px wide and down*/
+
+@media screen and (max-width: 600px) {
+
+}
+    
+/* for screen sizes 300 px wide and down */
+
+@media screen and (max-width: 300px) {
+    
+}
