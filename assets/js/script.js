@@ -199,7 +199,6 @@ function returnHome() {
 }
 
 function restartGame() {
-    
     stopTime();
 
     minutes = 0;
