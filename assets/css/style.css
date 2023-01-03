@@ -130,7 +130,7 @@ h1 {
     grid-gap: 15px;    
 }
 
-.game-end-msg {
+#game-end-msg {
     position: relative;
     width: 50%;
     height: 400px;
@@ -323,7 +323,7 @@ textarea {
         padding-bottom: 80px; 
     }
 
-    .game-end-msg {
+    #game-end-msg {
         height: 420px;
     }
 }
@@ -374,7 +374,7 @@ textarea {
         width: 65%;
     }
 
-    .game-end-msg {
+    #game-end-msg {
         width: 80%;
     }
 }
@@ -423,16 +423,17 @@ textarea {
     }
 
     .game-instructions {
-        top: -280px;
+        top: -250px;
         font-size: 18px;
+        width: 70%;
     }
 
     .feedback-container {
-        top: -375px;
+        top: -255px;
         width: 80%;
     }
 
-    .game-end-msg {
+    #game-end-msg {
         padding: 20px 10px;
         bottom: -280px;
     }
@@ -494,7 +495,8 @@ textarea {
         width: 60%;
         height: 520px;
         font-size: 16px;
-        padding-bottom: 80px;
+        padding-bottom: 90px;
+        top: -280px;
     }
 
     .feedback-container {
@@ -503,7 +505,7 @@ textarea {
         padding-bottom: 50px;
     }
 
-    .game-end-msg {
+    #game-end-msg {
         height: 450px;
     }
 }
@@ -554,14 +556,14 @@ textarea {
     .game-instructions {
         height: 550px;
         font-size: 14px;
-        padding-bottom: unset;
+        padding-bottom: 55px;
     }
 
     textarea {
         width: 170px;
     }
 
-    .game-end-msg {
+    #game-end-msg {
         padding: 20px 10px;
         bottom: -280px;
         height: 500px;
