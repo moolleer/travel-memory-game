@@ -302,6 +302,78 @@ input, textarea {
     h1 {
         font-size: 90px;
     }
+
+    .game-container {
+        width: 90%;
+        margin-top: -270px;
+    }
+
+    .game-data {
+        font-size: 30px;
+    }
+
+    .game-btn {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 80px;
+        height: 90px;
+    }
+
+    .card-front i {
+        top: -10px;
+        font-size: 17px;
+    }
+
+    .card img {
+        height: 90px;
+        width: 70px;
+    }
+}
+
+/* for screen sizes 412 px wide and down*/
+
+@media screen and (max-width: 412px) {
+    .buttons {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        display: table;
+        position: inherit;
+    }
+
+    h1 {
+        font-size: 90px;
+    }
+
+    .game-container {
+        width: 85%;
+        margin-top: -270px;
+    }
+
+    .game-data {
+        font-size: 25px;
+    }
+
+    .game-btn {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 70px;
+        height: 90px;
+    }
+
+    .card-front i {
+        top: -10px;
+        font-size: 17px;
+    }
+
+    .card img {
+        height: 90px;
+        width: 70px;
+    }
 }
     
 /* for screen sizes 300 px wide and down */
@@ -334,7 +406,6 @@ input, textarea {
     }
 
     .card-front i {
-        /* position: relative; */
         top: -20px;
         font-size: 15px;
     }
