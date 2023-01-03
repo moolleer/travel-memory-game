@@ -19,7 +19,7 @@ body {
 }
 
 /*Blurs the background*/
-.blur{
+.blur {
     position: fixed;
     top: 0;
     left: 0;
@@ -460,35 +460,36 @@ textarea {
         font-size: 110px;
     }
     .game-container {
-        width: 80%;
-        margin-top: -270px;
+        width: 90%;
+        margin-top: -280px;
     }
 
     .game-data {
-        font-size: 22px;
+        font-size: 30px;
     }
 
     #game-grid {
         grid-gap: 10px;
+        column-gap: 0px;
     }
 
     .game-btn {
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .card {
-        width: 50px;
-        height: 70px;
+        width: 70px;
+        height: 90px;
     }
 
     .card-front i {
-        top: -18px;
-        font-size: 18px;
+        top: -5px;
+        font-size: 25px;
     }
 
     .card img {
-        height: 80px;
-        width: 60px;
+        height: 90px;
+        width: 70px;
     }
 
     .game-instructions {
