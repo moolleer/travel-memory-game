@@ -240,6 +240,7 @@ p {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    top: 50px;
 
     border: 3px solid #14455a;
     background-color: #00A9C6;
@@ -257,6 +258,13 @@ input, textarea {
     padding: 8px;
     box-shadow: 4px 4px 5px #1f6d8f;
     border-radius: 10px;
+    margin: 10px 0px;
+}
+
+textarea {
+    position: relative;
+    width: 200px;
+    height: 100px;
 }
 
 /* for screen sizes 1200 px wide and down*/
@@ -353,6 +361,10 @@ input, textarea {
         top: 40px;
         padding-bottom: 110px;  
     }
+
+    .feedback-container {
+        width: 65%;
+    }
 }
 
 /* for screen sizes 600 px wide and down*/
@@ -361,14 +373,14 @@ input, textarea {
     .buttons {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 10%;
+        margin-top: 30%;
         display: table;
         position: inherit;
     }
 
     .game-container {
         width: 80%;
-        margin-top: -270px;
+        margin-top: -360px;
     }
 
     .game-data {
@@ -402,6 +414,13 @@ input, textarea {
         top: -280px;
         font-size: 18px;
     }
+
+    .feedback-container {
+        top: -375px;
+        width: 80%;
+    }
+
+    
 }
 
 /* for screen sizes 450 px wide and down*/
@@ -416,7 +435,7 @@ input, textarea {
     }
 
     .game-container {
-        width: 75%;
+        width: 80%;
         margin-top: -270px;
     }
 
@@ -443,8 +462,8 @@ input, textarea {
     }
 
     .card img {
-        height: 70px;
-        width: 50px;
+        height: 80px;
+        width: 60px;
     }
 
     .game-instructions {
@@ -453,11 +472,21 @@ input, textarea {
         font-size: 16px;
         padding-bottom: 80px;
     }
+
+    .feedback-container {
+        top: -280px;
+        width: 80%;
+        padding-bottom: 50px;
+    }
 }
     
 /* for screen sizes 300 px wide and down */
 
 @media screen and (max-width: 300px) {
+    .buttons {
+        margin-top: 10%;
+    }
+
     h1 {
         font-size: 75px;
     }
@@ -498,5 +527,9 @@ input, textarea {
         height: 550px;
         font-size: 14px;
         padding-bottom: unset;
+    }
+
+    textarea {
+        width: 170px;
     }
 }
