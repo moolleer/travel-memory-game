@@ -6,6 +6,7 @@ const gameInstructions = document.getElementById('instructions');
 const feedbackForm = document.getElementById('feedback');
 const showGameGrid = document.getElementById('game-modual');
 const gameGrid = document.getElementById('game-grid');
+const gameEndMessage = document.getElementsByClassName('game-end-msg');
 
 //create an array of travel images
 const itemsArray = [
@@ -200,7 +201,7 @@ function finishedGame() {
 
         blurContainer.innerHTML +=`
         <div class="game-end-msg">
-        <h2>You matched all pairs!!</h2>
+        <h2>You matched all pairs!!!</h2>
         <p>Your time was: ${minutes}: ${seconds} and your number of turns was: ${turnScore}.</p>
         <p>Try again to beat your time and number of turns!</p>
         <button class="btn" id="reset-game-btn"type="btn" type="button">Try Again</button>
@@ -219,6 +220,7 @@ function finishedGame() {
 //Functions for clearing and reseting the game
 function tryAgain() {
     blurContainer.classList.add('hide');
+    // gameEndMessage.classList.add('hide');
     removeBlurContBackground();
     clearGame();
     showGame();
@@ -226,6 +228,7 @@ function tryAgain() {
 
 function closeGame() {
     blurContainer.classList.add('hide');
+    // gameEndMessage.classList.add('hide');
     removeBlurContBackground();
     clearGame();
 }
@@ -242,9 +245,9 @@ function removeBlurContBackground() {
     if(blurContainer.classList.contains('set-background')) blurContainer.classList.remove('set-background');
 }
 
-function removeBlurredContainer(){
-    if(blurContainer.classList.contains('hide')) blurContainer.classList.remove('hide');
-}
+// function removeBlurredContainer(){
+//     if(gameEndMessage.classList.contains('')) gameEndMessage.classList.add('hide');
+// }
 
 //Restarts the game, turn back all cards and removing all cards before opening up a new game
 function restartGame() {

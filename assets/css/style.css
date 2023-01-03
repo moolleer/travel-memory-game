@@ -134,7 +134,7 @@ h1 {
     position: relative;
     width: 50%;
     height: 400px;
-    padding-top: 50px;
+    padding: 20px 10px;
     margin-left: auto;
     margin-right: auto;
     bottom: -200px;
@@ -145,6 +145,12 @@ h1 {
     text-shadow: 2px 2px 2px #000000;
     font-size: 20px;
     letter-spacing: 1px;
+    border-radius: 15px;
+}
+
+#reset-game-btn {
+    border-radius: 15px;
+    padding: 8px;
 }
 
 .set-background {
@@ -317,7 +323,9 @@ textarea {
         padding-bottom: 80px; 
     }
 
-    
+    .game-end-msg {
+        height: 420px;
+    }
 }
 
 /* for screen sizes 768 px wide and down*/
@@ -330,12 +338,12 @@ textarea {
     }
 
     h1 {
-        font-size: 100px;
+        font-size: 110px;
     }
 
     .game-container {
         width: 80%;
-        margin-top: 30px;
+        margin-top: unset;
     }
 
     #game-grid {
@@ -349,7 +357,7 @@ textarea {
 
     .card-front i {
         top: 12px;
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .card img {
@@ -365,6 +373,10 @@ textarea {
     .feedback-container {
         width: 65%;
     }
+
+    .game-end-msg {
+        width: 80%;
+    }
 }
 
 /* for screen sizes 600 px wide and down*/
@@ -373,14 +385,14 @@ textarea {
     .buttons {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 30%;
+        /* margin-top: 30%; */
         display: table;
         position: inherit;
     }
 
     .game-container {
         width: 80%;
-        margin-top: -360px;
+        margin-top: -250px;
     }
 
     .game-data {
@@ -420,7 +432,16 @@ textarea {
         width: 80%;
     }
 
-    
+    .game-end-msg {
+        padding: 20px 10px;
+        bottom: -280px;
+    }
+
+    #reset-game-button {
+        height: 500px;
+        bottom: unset;
+        margin-bottom: unset;  
+    }
 }
 
 /* for screen sizes 450 px wide and down*/
@@ -434,6 +455,9 @@ textarea {
         position: inherit;
     }
 
+    h1 {
+        font-size: 110px;
+    }
     .game-container {
         width: 80%;
         margin-top: -270px;
@@ -477,6 +501,10 @@ textarea {
         top: -280px;
         width: 80%;
         padding-bottom: 50px;
+    }
+
+    .game-end-msg {
+        height: 450px;
     }
 }
     
@@ -531,5 +559,12 @@ textarea {
 
     textarea {
         width: 170px;
+    }
+
+    .game-end-msg {
+        padding: 20px 10px;
+        bottom: -280px;
+        height: 500px;
+        top: 200px;
     }
 }
