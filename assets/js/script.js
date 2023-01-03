@@ -45,16 +45,19 @@ fullGameGrid.sort(function() {
 //Functions for showing and hiding feedbackform and instructions
 function showGameInstructions() {
     gameInstructions.classList.remove('hide');
+    removeBlurredContainer();
     blurContainer.classList.add('blur');
 }
 
 function hideGameInstructions(){
     gameInstructions.classList.add('hide');
+    
     blurContainer.classList.remove('blur');
 }
 
 function showFeedbackForm() {
     feedbackForm.classList.remove('hide');
+    removeBlurredContainer();
     blurContainer.classList.add('blur');
 }
 
@@ -229,6 +232,7 @@ function closeGame() {
 
 function returnHome() {
     showGameGrid.classList.add('hide');
+    blurContainer.classList.remove('blur');
     blurContainer.classList.add('hide');
     removeBlurContBackground();
     clearGame();
@@ -236,6 +240,10 @@ function returnHome() {
 
 function removeBlurContBackground() {
     if(blurContainer.classList.contains('set-background')) blurContainer.classList.remove('set-background');
+}
+
+function removeBlurredContainer(){
+    if(blurContainer.classList.contains('hide')) blurContainer.classList.remove('hide');
 }
 
 //Restarts the game, turn back all cards and removing all cards before opening up a new game
