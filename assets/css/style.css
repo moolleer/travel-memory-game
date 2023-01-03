@@ -200,6 +200,7 @@ h1 {
 .card-front i {
     position: relative;
     top: 30px;
+    top: 40px;
 }
 
 .card.turn {
@@ -303,6 +304,11 @@ input, textarea {
         font-size: 40px;
     }
 
+    .game-instructions {
+        top: 40px;
+        padding-bottom: 80px; 
+    }
+
     
 }
 
@@ -341,6 +347,11 @@ input, textarea {
     .card img {
         height: 130px;
         width: 110px;
+    }
+
+    .game-instructions {
+        top: 40px;
+        padding-bottom: 110px;  
     }
 }
 
@@ -386,6 +397,11 @@ input, textarea {
         height: 100px;
         width: 80px;
     }
+
+    .game-instructions {
+        top: -280px;
+        font-size: 18px;
+    }
 }
 
 /* for screen sizes 450 px wide and down*/
@@ -430,6 +446,13 @@ input, textarea {
         height: 70px;
         width: 50px;
     }
+
+    .game-instructions {
+        width: 60%;
+        height: 520px;
+        font-size: 16px;
+        padding-bottom: 80px;
+    }
 }
     
 /* for screen sizes 300 px wide and down */
@@ -469,5 +492,11 @@ input, textarea {
     .card img {
         height: 60px;
         width: 50px;
+    }
+
+    .game-instructions {
+        height: 550px;
+        font-size: 14px;
+        padding-bottom: unset;
     }
 }
