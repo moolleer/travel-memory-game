@@ -160,8 +160,8 @@ h1 {
     flex-wrap: wrap;
     margin: auto;
 
-    width: 135px;
-    height: 160px;
+    width: 150px;
+    height: 170px;
     cursor: pointer;
 
     transform: scale(1);
@@ -175,8 +175,8 @@ h1 {
 }
 
 .card img {
-    height: 150px;
-    width: 130px;
+    height: 170px;
+    width: 150px;
     border: 2px solid #14455a;
 }
 
@@ -266,6 +266,16 @@ input, textarea {
         top: 33%;
         left: 25%;
     }
+
+    .card {
+        width: 150px;
+        height: 170px;
+    }
+
+    .card img {
+        height: 170px;
+        width: 150px;
+    }
 }
 
 /* for screen sizes 992 px wide and down*/
@@ -276,6 +286,24 @@ input, textarea {
         top: 35%;
         left: 22%;
     }
+
+    .card {
+        width: 130px;
+        height: 150px;
+    }
+
+    .card img {
+        height: 150px;
+        width: 130px;
+    }
+
+    .card-front i {
+        position: relative;
+        top: 25px;
+        font-size: 40px;
+    }
+
+    
 }
 
 /* for screen sizes 768 px wide and down*/
@@ -285,6 +313,34 @@ input, textarea {
         position: absolute;
         top: 35%;
         left: 35%;
+    }
+
+    h1 {
+        font-size: 100px;
+    }
+
+    .game-container {
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    #game-grid {
+        column-gap: 0px;
+    }
+
+    .card {
+        width: 110px;
+        height: 130px;
+    }
+
+    .card-front i {
+        top: 12px;
+        font-size: 30px;
+    }
+
+    .card img {
+        height: 130px;
+        width: 110px;
     }
 }
 
@@ -299,17 +355,17 @@ input, textarea {
         position: inherit;
     }
 
-    h1 {
-        font-size: 90px;
-    }
-
     .game-container {
-        width: 90%;
+        width: 80%;
         margin-top: -270px;
     }
 
     .game-data {
         font-size: 30px;
+    }
+
+    #game-grid {
+        column-gap: 0px;
     }
 
     .game-btn {
@@ -318,23 +374,23 @@ input, textarea {
 
     .card {
         width: 80px;
-        height: 90px;
+        height: 100px;
     }
 
     .card-front i {
-        top: -10px;
-        font-size: 17px;
+        top: -1px;
+        font-size: 25px;
     }
 
     .card img {
-        height: 90px;
-        width: 70px;
+        height: 100px;
+        width: 80px;
     }
 }
 
-/* for screen sizes 412 px wide and down*/
+/* for screen sizes 450 px wide and down*/
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 450px) {
     .buttons {
         margin-left: auto;
         margin-right: auto;
@@ -343,36 +399,36 @@ input, textarea {
         position: inherit;
     }
 
-    h1 {
-        font-size: 90px;
-    }
-
     .game-container {
-        width: 85%;
+        width: 75%;
         margin-top: -270px;
     }
 
     .game-data {
-        font-size: 25px;
+        font-size: 22px;
+    }
+
+    #game-grid {
+        grid-gap: 10px;
     }
 
     .game-btn {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .card {
-        width: 70px;
-        height: 90px;
+        width: 50px;
+        height: 70px;
     }
 
     .card-front i {
-        top: -10px;
-        font-size: 17px;
+        top: -18px;
+        font-size: 18px;
     }
 
     .card img {
-        height: 90px;
-        width: 70px;
+        height: 70px;
+        width: 50px;
     }
 }
     
@@ -394,6 +450,7 @@ input, textarea {
 
     #game-grid {
         grid-gap: 10px;
+        column-gap: 0px;
     }
 
     .game-btn {
@@ -407,7 +464,6 @@ input, textarea {
 
     .card-front i {
         top: -20px;
-        font-size: 15px;
     }
 
     .card img {
