@@ -7,7 +7,6 @@ const feedbackForm = document.getElementById('feedback');
 const showGameGrid = document.getElementById('game-modual');
 const gameGrid = document.getElementById('game-grid');
 const container = document.querySelector('#game-grid');
-const gameEndMessage = document.getElementById('game-end-msg');
 
 //create an array of travel images
 const itemsArray = [
@@ -21,6 +20,9 @@ const itemsArray = [
     {name: 'suitcase', image: 'suitcase.png'},
 ];
 
+//Duplicate the array
+const fullGameGrid = itemsArray.concat(itemsArray);
+
 let turnedCard = false;
 let firstCard, secondCard;
 let lockGrid = false;
@@ -33,13 +35,11 @@ let time;
 let minutes = 0;
 let seconds = 0;
 
-/*Duplicate the array and randomize fullGameGrid for each load
-*code adapted from https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/
-*/
-const fullGameGrid = itemsArray.concat(itemsArray);
-
+/**
+ * Randomize the game grid 
+ */
 function shuffleCards() {
-fullGameGrid.sort(function() {
+    fullGameGrid.sort(function() {
     return 0.5 - Math.random();
 })
 }
@@ -67,7 +67,9 @@ function hideFeedbackForm() {
     blurContainer.classList.remove('blur');
 }
 
-//Setup the gamegrid by creating each card and add eventlisteners
+/**
+ * Setup the gamegrid by creating each card and add eventlisteners
+ */
 function showGame() {
     showGameGrid.classList.remove('hide');
     if(blurContainer.classList.contains('hide')) blurContainer.classList.remove('hide');
@@ -93,9 +95,10 @@ function showGame() {
     blurContainer.classList.add('blur');
 }
 
-/*click function for memorycards, and for turn class css effects
-* code adapted from https://marina-ferreira.github.io/tutorials/js/memory-game/
-*/
+/**
+ * click function for memorycards, and for turn class css effects 
+ * code adapted from https://marina-ferreira.github.io/tutorials/js/memory-game/
+ */
 function turnCard() {
     if (startGameTime) startTime();
 
@@ -115,7 +118,9 @@ function turnCard() {
     }
 }
 
-//starts the timer for the game
+/**
+ * Starts the timer for the game
+ */
 function startTime () {
     time = setInterval(function() {
         seconds++;
@@ -127,11 +132,17 @@ function startTime () {
     }, 1000);
     startGameTime = false;
 }
-//Stops the timer
+
+/**
+ * Stops the timer for the game
+ */
 function stopTime() {
     clearInterval(time);
 }
-//reseting card values so card can be clicked again
+
+/**
+ * Reseting card values so card can be clicked again
+ */
 function resetGrid() {
     turnedCard = false;
     lockGrid = false;
@@ -140,7 +151,9 @@ function resetGrid() {
     secondCard = null;
 }
 
-//check if cards match
+/**
+ * Check if cards match and prevent randomized card clicks 
+ */
 function checkMatch() {
     //for a match, prevent the cards to be clicked and turned again
     if (firstCard.dataset.description === secondCard.dataset.description) {
@@ -149,7 +162,6 @@ function checkMatch() {
 
         ++cardsMatched;
         ++turnScore;
-        console.log(turnScore);
         cardTurnsContainer.innerHTML = turnScore;
         checkCardMatches();
         resetGrid();
@@ -161,14 +173,15 @@ function checkMatch() {
             if(secondCard !== null) secondCard.classList.remove('turn');
 
         ++turnScore;
-        console.log(turnScore);
         cardTurnsContainer.innerHTML = turnScore;
         resetGrid();
         }, 800);
     }
 }
 
-//checks if all cards are matched and if so stops the game and show message
+/**
+ * checks if all cards are matched and if so stops the game and show game end message
+ */
 function checkCardMatches() {
     if (cardsMatched === 8) {
         stopTime();
@@ -176,7 +189,9 @@ function checkCardMatches() {
     }  
 }
 
-//Show a finished game message and remove focus from the background
+/**
+ * Show a finished game message and remove focus from the background
+ */
 function finishedGame() {
     blurContainer.classList.remove('hide');
     showGameGrid.classList.add('hide');
@@ -227,7 +242,9 @@ function removeBlurContBackground() {
     if(blurContainer.classList.contains('set-background')) blurContainer.classList.remove('set-background');
 }
 
-//Restarts the game, turn back all cards and removing all cards before opening up a new game
+/**
+ * Restarts the game, turn back all cards and removing all cards before opening up a new game
+ */
 function restartGame() {
     clearGame();
     if(secondCard !== null) secondCard.classList.remove('turn'); 
@@ -235,6 +252,9 @@ function restartGame() {
     showGame(); 
 }
 
+/**
+ * Resets the game to initial values
+ */
 function clearGame() {
     stopTime();
 
@@ -251,7 +271,9 @@ function clearGame() {
     resetGrid(); 
 }
 
-//Remove all cards
+/**
+ * Remove all cards from the grid
+ */
 function removeAllChildNodes(parent) {
     while (gameGrid.firstChild) {
         gameGrid.removeChild(gameGrid.firstChild);
