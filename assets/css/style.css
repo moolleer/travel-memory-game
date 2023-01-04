@@ -98,6 +98,7 @@ h1 {
 
     background-color: #00A9C6;
     border: 2px solid #14455a;
+    top: 40px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
@@ -391,7 +392,7 @@ textarea {
 
     .game-container {
         width: 80%;
-        margin-top: -250px;
+        margin-top: -270px;
     }
 
     .game-data {
@@ -496,9 +497,9 @@ textarea {
     }
 }
     
-/* for screen sizes 300 px wide and down */
+/* for screen sizes 365 px wide and down */
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 365px) {
     .buttons {
         margin-top: 18%;
     }
@@ -509,7 +510,7 @@ textarea {
 
     .game-container {
         width: 96%;
-        top: -20px;
+        top: -40px;
     }
 
     .game-data {
