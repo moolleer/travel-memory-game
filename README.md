@@ -31,8 +31,15 @@ The project has been deployed to GitHub pages taking the following steps:
 
 The live link: https://moolleer.github.io/travel-memory-game/
 
-## Credits
-
-### Content
+## Credits & Content
+- To convert an image to favicon i used [Zamzar](https://www.zamzar.com/convert/png-to-ico/#).
+- For how to set the effect for hovering over the buttons I used the code from [Sliderrevolution](https://www.sliderrevolution.com/resources/css-button-hover-effects/).
+- Inspiration for how to create the memory grid from [Codewithrandom](https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/).
+- Inspiration for how to create the memory cards [Codingartistweb](https://codingartistweb.com/2022/06/memory-game-javascript-project/).
+- For turning the cards function I used an example from [Marina Ferreira](https://marina-ferreira.github.io/tutorials/js/memory-game/).
+- How to set a timer function I found [Dev](https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7).
+- Code institutes love running README file template as a inspiration for the README file.
 
 ### Media
+- The images for the cards comes from [Freepik](https://www.freepik.com/free-vector/tourism-icons_772926.htm#page=11&query=travel%20stickericons&position=12&from_view=search&track=ais).
+- The image for the background picture are taken from [Freepik](https://www.freepik.com/free-photo/frame-beside-airplane-hat_6791807.htm#page=2&query=travel%20background%20blue&position=0&from_view=search&track=ais).
