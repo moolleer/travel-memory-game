@@ -149,6 +149,7 @@ function checkMatch() {
         ++cardsMatched;
         ++turnScore;
         console.log(turnScore);
+        cardTurnsContainer.innerHTML = turnScore;
         checkCardMatches();
         resetGrid();
     } else {
@@ -160,11 +161,10 @@ function checkMatch() {
 
         ++turnScore;
         console.log(turnScore);
+        cardTurnsContainer.innerHTML = turnScore;
         resetGrid();
         }, 800);
     }
-
-    cardTurnsContainer.innerHTML = `${turnScore}`;
 }
 
 //checks if all cards are matched and if so stops the game and show message
