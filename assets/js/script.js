@@ -74,7 +74,6 @@ function showGame() {
     showGameGrid.classList.remove('hide');
     if(blurContainer.classList.contains('hide')) blurContainer.classList.remove('hide');
     shuffleCards();
-    console.log(fullGameGrid);
     
     for (let i = 0; i < fullGameGrid.length; i++) {
         gameGrid.innerHTML +=`
