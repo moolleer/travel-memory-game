@@ -41,7 +41,7 @@ let seconds = 0;
 function shuffleCards() {
     fullGameGrid.sort(function() {
     return 0.5 - Math.random();
-})
+});
 }
 
 //Functions for showing and hiding feedbackform and instructions
