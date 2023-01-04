@@ -20,7 +20,7 @@ body {
 
 /*Blurs the background*/
 .blur {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
@@ -101,20 +101,25 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
-    padding-top: 30px; 
+    padding-top: 20px; 
     padding-bottom: 40px;
     border-radius: 15px;
 }
 
+.btns-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
 .game-btn {
     background-color: #00A9C6;
-    font-size: 30px;
+    font-size: 50px;
     color: #fff;
     text-shadow: 2px 2px 4px #000000;
 }
 
 .game-data {
-    font-family: 'Alex Brush', sans-serif;
     font-size: 40px;
     text-shadow: 2px 2px 4px #000000;
 
@@ -127,7 +132,8 @@ h1 {
     display: grid; 
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-gap: 15px;    
+    grid-gap: 15px; 
+    column-gap: 0px;   
 }
 
 #game-end-msg {
@@ -326,6 +332,10 @@ textarea {
     #game-end-msg {
         height: 420px;
     }
+
+    .game-btn {
+        font-size: 45px;
+    }
 }
 
 /* for screen sizes 768 px wide and down*/
@@ -344,10 +354,6 @@ textarea {
     .game-container {
         width: 80%;
         margin-top: unset;
-    }
-
-    #game-grid {
-        column-gap: 0px;
     }
 
     .card {
@@ -399,12 +405,8 @@ textarea {
         font-size: 30px;
     }
 
-    #game-grid {
-        column-gap: 0px;
-    }
-
     .game-btn {
-        font-size: 20px;
+        font-size: 35px;
     }
 
     .card {
@@ -470,11 +472,10 @@ textarea {
 
     #game-grid {
         grid-gap: 10px;
-        column-gap: 0px;
     }
 
     .game-btn {
-        font-size: 17px;
+        font-size: 30px;
     }
 
     .card {
@@ -533,11 +534,10 @@ textarea {
 
     #game-grid {
         grid-gap: 10px;
-        column-gap: 0px;
     }
 
     .game-btn {
-        font-size: 15px;
+        font-size: 25px;
     }
 
     .card {
