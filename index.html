@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,25 +12,28 @@
     <title>Travel Memory Game</title>
     <link rel="icon" type="image/x-icon" href="assets/images/plane.ico">
 </head>
+
 <body>
-    
     <h1 id="heading">Travel Memory</h1>
-    
+
     <div class="buttons">
-        <button class="btn" id="new-game" type="button">New Game</button>
-        <button class="btn" id="how-to-play" type="button">How To Play</button>
-        <button class="btn" id="feedback-button" type="button">Feedback</button>
+        <button class="btn" id="new-game" type="button" aria-label="New game">New Game</button>
+        <button class="btn" id="how-to-play" type="button" aria-label="How to play">How To Play</button>
+        <button class="btn" id="feedback-button" type="button" aria-label="Feedback">Feedback</button>
     </div>
+
     <div id="blur-container"></div>
 
     <div class="game-container hide" id="game-modual">
         <div class="btns-container">
-        <button class="game-btn" id="home-button" type="button" ><i class="fa-solid fa-house"></i></button>
-        <button class="game-btn" id="restart-button" type="button" ><i class="fa-solid fa-rotate-left"></i></button>
+            <button class="game-btn" id="home-button" type="button" aria-label="Home"><i
+                    class="fa-solid fa-house"></i></button>
+            <button class="game-btn" id="restart-button" type="button" aria-label="Restart"><i
+                    class="fa-solid fa-rotate-left"></i></button>
         </div>
         <div class="game-data">
-            <div class="time">Time : <span id="game-time">0:00</span></div>
-            <div class="turns">Turns : <span id="card-turns">0</span></div>
+            <div class="time">Time <span id="game-time">0:00</span></div>
+            <div class="turns">Turns <span id="card-turns">0</span></div>
         </div>
         <div id="game-grid"></div>
     </div>
@@ -40,13 +44,13 @@
         <h3>- Turn the cards and match the pairs of travel items!</h3>
         <hr>
         <p>To begin the game, click on any card to turn it over.</p>
-        <p>The time starts when you click the first card.</p>
-        <p>When you have turned two cards it count as one move.</p>
+        <p>The time starts when you click on the first card.</p>
+        <p>When you have turned two cards it counts as one move.</p>
         <p>To complete the game you need to find and match all 8 pairs.</p>
         <p>Try again to beat your time and turnscore!</p>
         <p>Good Luck!</p>
-        
-        <button class="close-btn" id="close" type="button" ><i class="fa-solid fa-x"></i></button>
+
+        <button class="close-btn" id="close" type="button" aria-label="Close"><i class="fa-solid fa-x"></i></button>
     </div>
 
     <div class="feedback-container hide" id="feedback">
@@ -63,7 +67,8 @@
             <input class="btn" id="send-form-btn" type="submit" value="Send!">
         </form>
 
-        <button class="close-btn" id="close-form" type="button"><i class="fa-solid fa-x"></i></button>
+        <button class="close-btn" id="close-form" type="button" aria-label="Close form"><i
+                class="fa-solid fa-x"></i></button>
     </div>
 
     <!-- font awesome script-->
@@ -71,4 +76,5 @@
 
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

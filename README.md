@@ -18,7 +18,7 @@ The game is designed for users of any age to play and enjoy.
 
 ## Testing
 
-
+All testing information can be fould here [testing.md](https://github.com/moolleer/travel-memory-game/blob/main/docs/testing.md)
 
 ## Deployment
 
