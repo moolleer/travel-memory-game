@@ -27,9 +27,9 @@ body {
     height: 100vh;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px); 
-    /* transform: translate3d(0, 0, 0); */
 }
 
+/*Styles for buttons*/
 .btn {
     font-family: 'Oswald', sans-serif;
     font-size: 25px;
@@ -43,7 +43,6 @@ body {
     border: 2px solid #fff;
 
     display: block;
-
 }
 
 /* Center modual buttons */
@@ -90,9 +89,9 @@ h1 {
 
     position: relative;
     z-index: 1;
-
 }
 
+/*Styles for the container who holds the game*/
 .game-container {
     width: 80%; 
     height: fit-content; 
@@ -121,6 +120,7 @@ h1 {
     text-shadow: 2px 2px 4px #000000;
 }
 
+/*Styles for the timer and turnscore*/
 .game-data {
     font-size: 40px;
     text-shadow: 2px 2px 4px #000000;
@@ -130,6 +130,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/*Setup the game grid with 4 columns and 4 rows*/
 #game-grid {
     display: grid; 
     grid-template-columns: repeat(4, 1fr);
@@ -138,10 +139,10 @@ h1 {
     column-gap: 0px;   
 }
 
+/*Styles for the modual when the game is finished*/
 #game-end-msg {
     position: relative;
     width: 50%;
-    height: 400px;
     padding: 20px 10px;
     margin-left: auto;
     margin-right: auto;
@@ -161,6 +162,7 @@ h1 {
     padding: 8px;
 }
 
+/*Add a darker background*/
 .set-background {
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
@@ -168,6 +170,7 @@ h1 {
     top: 0%;
 }
 
+/*Styles for the cards*/
 .card {
     display: flex;
     position: relative;
@@ -221,18 +224,20 @@ h1 {
     transform: rotateY(180deg);
 }
 
+/*Hides the element when added*/
 .hide {
     display: none;
 }
 
+/*Styles for the game instructions modual*/
 .game-instructions {
     width: 50%;
-    height: 500px;
     position: relative;
     padding: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    top: 40px;
 
     border: 3px solid #14455a;
     background-color: #00A9C6;
@@ -246,6 +251,7 @@ p {
     padding: 10px 0px;
 }
 
+/*Styles for the feedback form*/
 .feedback-container {
     width: 50%;
     height: 500px;
@@ -326,15 +332,6 @@ textarea {
         font-size: 40px;
     }
 
-    .game-instructions {
-        top: 40px;
-        padding-bottom: 80px; 
-    }
-
-    #game-end-msg {
-        height: 420px;
-    }
-
     .game-btn {
         font-size: 45px;
     }
@@ -345,7 +342,7 @@ textarea {
 @media screen and (max-width: 768px) {
     .buttons {
         position: absolute;
-        top: 35%;
+        top: 30%;
         left: 35%;
     }
 
@@ -374,16 +371,11 @@ textarea {
     }
 
     .game-instructions {
-        top: 40px;
-        padding-bottom: 110px;  
+        top: 30px; 
     }
 
     .feedback-container {
         width: 65%;
-    }
-
-    #game-end-msg {
-        width: 80%;
     }
 }
 
@@ -438,8 +430,8 @@ textarea {
     }
 
     #game-end-msg {
-        padding: 20px 10px;
         bottom: -280px;
+        width: 70%;
     }
 
     #reset-game-button {
@@ -455,7 +447,6 @@ textarea {
     .buttons {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 10%;
         display: table;
         position: inherit;
     }
@@ -465,7 +456,6 @@ textarea {
     }
     .game-container {
         width: 90%;
-        margin-top: -280px;
     }
 
     .game-data {
@@ -497,20 +487,13 @@ textarea {
 
     .game-instructions {
         width: 60%;
-        height: 520px;
         font-size: 16px;
-        padding-bottom: 90px;
-        top: -280px;
     }
 
     .feedback-container {
-        top: -280px;
+        top: -250px;
         width: 80%;
         padding-bottom: 50px;
-    }
-
-    #game-end-msg {
-        height: 450px;
     }
 }
     
@@ -518,7 +501,7 @@ textarea {
 
 @media screen and (max-width: 300px) {
     .buttons {
-        margin-top: 10%;
+        margin-top: 18%;
     }
 
     h1 {
@@ -527,7 +510,7 @@ textarea {
 
     .game-container {
         width: 96%;
-        margin-top: -270px;
+        top: -20px;
     }
 
     .game-data {
@@ -557,9 +540,8 @@ textarea {
     }
 
     .game-instructions {
-        height: 550px;
         font-size: 14px;
-        padding-bottom: 55px;
+        top: -290px;
     }
 
     textarea {
@@ -567,9 +549,11 @@ textarea {
     }
 
     #game-end-msg {
-        padding: 20px 10px;
-        bottom: -280px;
-        height: 500px;
         top: 200px;
+        width: 70%;
+    }
+
+    .feedback-container {
+        top: -280px;
     }
 }
