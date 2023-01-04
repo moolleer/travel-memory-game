@@ -7,6 +7,7 @@ const feedbackForm = document.getElementById('feedback');
 const showGameGrid = document.getElementById('game-modual');
 const gameGrid = document.getElementById('game-grid');
 const container = document.querySelector('#game-grid');
+const gameEndMessage = document.getElementById('game-end-msg');
 
 //create an array of travel images
 const itemsArray = [
@@ -200,7 +201,7 @@ function finishedGame() {
 
 //Functions for clearing and reseting the game
 function tryAgain() {
-    blurContainer.innerHTML = "";
+    blurContainer.innerHTML= "";
     blurContainer.classList.add('hide');
     removeBlurContBackground();
     clearGame();
@@ -209,6 +210,7 @@ function tryAgain() {
 
 function closeGame() {
     blurContainer.classList.add('hide');
+    blurContainer.innerHTML= "";
     removeBlurContBackground();
     clearGame();
 }
