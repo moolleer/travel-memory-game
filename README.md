@@ -1,10 +1,11 @@
 # Travel Memory
 
 Travel Memory is a travel themed memory game where the user should pair together different items related to traveling. 
-Its for people who wants to play a quick and easy game while also training their memory at the same time. The game also has a timer and turnscore for the people who wish to improve their result, or to compete against others.  
+Its for users who wants to play a quick and easy game while also training their memory at the same time. 
+The game also has a timer and turnscore for the users who wish to improve their result. 
 The game is designed for users of any age to play and enjoy. 
 
-![Responsive Mockup](docs/README-images/am-i-responsive-pp2.png)
+![Responsive Mockup](docs/README-images/amiresponsive.png)
 
 ### [View the live website here](https://moolleer.github.io/travel-memory-game/)
 
@@ -33,12 +34,14 @@ How To Play
 
 The Game
 - The game consists of 16 cards on a 4x4 grid. At the top there is a home button represented by a home icon, and a restart game button represented by a rounded arrow icon for the users understanding on how to navigate.
-- Game starts when the user clicks on any card. The cursor also turns into a pointer when hovering over the cards for the user experience. When a card has been clicked, the timer starts and the turnscore counts every time the second card have been checked for a match. If there is a match, the card stays turned. The user could also reset the game at any time by clicking the reset button. Then the cards that have been matched turns back and the timer and turnscore stops and resets to the initial state. When the home button is clicked the game finishes and returns to the home page. 
+- Game starts when the user clicks on any card. The cursor also turns into a pointer when hovering over the cards for the user experience. When a card has been clicked, the timer starts and the turnscore counts every time the second card have been checked for a match. Should the user try to turn another card before the two cards been checked, the card wich the users trying to click will make a small movement to show that its not possible to click this card yet.
+ If there is a match, the card stays turned. The user could also reset the game at any time by clicking the reset button. Then the cards that have been matched turns back and the timer and turnscore stops and resets to the initial state. When the home button is clicked the game finishes and returns to the home page. 
 
 ![Memory game](/docs/README-images/memorygame.png)
 
 Finished Game
-- When the user have matched all pairs a message is presented with the time and turnscore. Then the user can decide to play again or to close the window.
+- When the user have matched all pairs a message is presented with the time and turnscore. The background has also been darkend with an opaque filter, for adding some extra attention to that the game is finished. 
+Then the user can decide to play again or to close the window.
 
 ![Game end](/docs/README-images/game-end-message.png)
 
@@ -47,6 +50,10 @@ Feedback
 
 ![Feedback](/docs/README-images/feedbackform.png)
 
+Favicon
+- A favicon have been added to the browser window to help users easily locate the website tab on their browser and across different applications.
+
+![Favicon](/docs/README-images/favicon.png)
 
 ### Future Features
 - For future features I would like to add a high score bord to the game. The user would then be able to add their name and record their turnscores and time.

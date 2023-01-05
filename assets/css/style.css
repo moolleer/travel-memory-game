@@ -11,11 +11,11 @@ body {
     background-image: url('../images/background-image.jpg');
     background-color: #00A9C6;
     background-size: cover;
-    color: #fff; 
+    color: #fff;
 
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center center;   
+    background-position: center center;
 }
 
 /*Blurs the background*/
@@ -45,13 +45,16 @@ body {
 }
 
 /* Center modual buttons */
-#send-form-btn, #reset-game-btn, #close-finished-game-btn {
+#send-form-btn,
+#reset-game-btn,
+#close-finished-game-btn {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-#reset-game-btn, #close-finished-game-btn {
+#reset-game-btn,
+#close-finished-game-btn {
     bottom: -20px;
     position: relative;
     margin-bottom: 40px;
@@ -66,10 +69,11 @@ body {
     position: absolute;
     top: 35%;
     left: 30%;
-
 }
 
-#new-game, #how-to-play, #feedback-button {
+#new-game,
+#how-to-play,
+#feedback-button {
     padding: 8px 5px;
     border-radius: 15px;
 }
@@ -92,8 +96,8 @@ h1 {
 
 /*Styles for the container who holds the game*/
 .game-container {
-    width: 80%; 
-    height: fit-content; 
+    width: 80%;
+    height: fit-content;
     position: relative;
 
     background-color: #00A9C6;
@@ -102,7 +106,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
-    padding-top: 20px; 
+    padding-top: 20px;
     padding-bottom: 40px;
     border-radius: 15px;
 }
@@ -132,11 +136,11 @@ h1 {
 
 /*Setup the game grid with 4 columns and 4 rows*/
 #game-grid {
-    display: grid; 
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-gap: 15px; 
-    column-gap: 0px;   
+    grid-gap: 15px;
+    column-gap: 0px;
 }
 
 /*Styles for the modual when the game is finished*/
@@ -274,7 +278,8 @@ label {
     display: block;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 8px;
     box-shadow: 4px 4px 5px #1f6d8f;
     border-radius: 10px;
@@ -289,7 +294,7 @@ textarea {
 
 /* for screen sizes 1200 px wide and down*/
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
     .buttons {
         position: absolute;
         top: 33%;
@@ -371,7 +376,7 @@ textarea {
     }
 
     .game-instructions {
-        top: 30px; 
+        top: 30px;
     }
 
     .feedback-container {
@@ -437,7 +442,7 @@ textarea {
     #reset-game-button {
         height: 500px;
         bottom: unset;
-        margin-bottom: unset;  
+        margin-bottom: unset;
     }
 }
 
@@ -454,6 +459,7 @@ textarea {
     h1 {
         font-size: 110px;
     }
+
     .game-container {
         width: 90%;
     }
@@ -496,7 +502,7 @@ textarea {
         padding-bottom: 50px;
     }
 }
-    
+
 /* for screen sizes 365 px wide and down */
 
 @media screen and (max-width: 365px) {
