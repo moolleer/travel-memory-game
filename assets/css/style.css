@@ -352,7 +352,7 @@ textarea {
     }
 
     h1 {
-        font-size: 110px;
+        font-size: 95px;
     }
 
     .game-container {
@@ -387,17 +387,13 @@ textarea {
 /* for screen sizes 600 px wide and down*/
 
 @media screen and (max-width: 600px) {
-    .buttons {
-        margin-left: auto;
-        margin-right: auto;
-        /* margin-top: 30%; */
-        display: table;
-        position: inherit;
-    }
-
     .game-container {
         width: 80%;
-        margin-top: -270px;
+        top: 10px;
+    }
+
+    h1 {
+        font-size: 85px;
     }
 
     .game-data {
@@ -424,13 +420,13 @@ textarea {
     }
 
     .game-instructions {
-        top: -250px;
+        top: 10px;
         font-size: 18px;
         width: 70%;
     }
 
     .feedback-container {
-        top: -255px;
+        top: 10px;
         width: 80%;
     }
 
@@ -456,12 +452,9 @@ textarea {
         position: inherit;
     }
 
-    h1 {
-        font-size: 110px;
-    }
-
     .game-container {
         width: 90%;
+        top: -250px;
     }
 
     .game-data {
@@ -494,6 +487,7 @@ textarea {
     .game-instructions {
         width: 60%;
         font-size: 16px;
+        top: -250px;
     }
 
     .feedback-container {
@@ -516,7 +510,7 @@ textarea {
 
     .game-container {
         width: 96%;
-        top: -40px;
+        top: -300px;
     }
 
     .game-data {
