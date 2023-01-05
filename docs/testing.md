@@ -8,15 +8,19 @@
 - The website have been tested and works in different browsers:
 
   - Google Chrome
+  
  ![Google chrome browser](/docs/README-images/google-chrome-testing.png)
 
   - Microsoft Edge
+
  ![Microsoft Edge browser](/docs/README-images/explorer-test.png)
 
   - Firefox
+
  ![Firefox browser](/docs/README-images/firefox-test.png)
 
   - Safari
+
  ![Safari browser](/docs/README-images/safari-testing.jpg)
 
 ### Lighthouse

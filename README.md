@@ -21,8 +21,8 @@ The game is designed for users of any age to play and enjoy.
 
 ### Existing Features
 
-Homepage
-- The homepage is presented by three button options. The user can start a new game, read game instructions or leave feedback.
+Home Page
+- The home page is presented by three button options. The user can start a new game, read game instructions or leave feedback.
 
 ![Homepage](/docs/README-images/homepage.png)
 
@@ -43,7 +43,7 @@ Finished Game
 ![Game end](/docs/README-images/game-end-message.png)
 
 Feedback
-- The user can leave some feedback by writing their name, email and a textmessage. All input fields must be filled out and a email for the form to be submited.
+- The user can leave some feedback by writing their name, email and a textmessage. All input fields must be filled out and an email provided for the form to be submited.
 
 ![Feedback](/docs/README-images/feedbackform.png)
 
@@ -71,7 +71,7 @@ The live link: https://moolleer.github.io/travel-memory-game/
 
 - To convert an image to favicon i used [Zamzar](https://www.zamzar.com/convert/png-to-ico/#).
 - For how to set the effect for hovering over the buttons I used the code from [Sliderrevolution](https://www.sliderrevolution.com/resources/css-button-hover-effects/).
-- Inspiration for how to create the memory grid from [Codewithrandom](https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/).
+- Inspiration for how to create the game grid from [Codewithrandom](https://www.codewithrandom.com/2022/11/05/memory-game-using-javascript/) and [Freecodecamp](https://www.freecodecamp.org/news/how-to-create-an-image-gallery-with-css-grid-e0f0fd666a5c/)
 - Inspiration for how to create the memory cards [Codingartistweb](https://codingartistweb.com/2022/06/memory-game-javascript-project/).
 - For turning the cards function I used an example from [Marina Ferreira](https://marina-ferreira.github.io/tutorials/js/memory-game/).
 - How to set a timer function I found [Dev](https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7).
